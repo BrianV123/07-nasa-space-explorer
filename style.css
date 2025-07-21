@@ -69,6 +69,7 @@ button {
   background-color: #d3d3d3;
   color: black;
   cursor: pointer;
+  font-family: 'DM Mono', monospace;
 }
 button:hover {
   background-color: #bfbfbf;
@@ -85,6 +86,36 @@ button:hover {
   button {
     width: auto;
   }
+}
+
+/* Space fact section */
+.space-fact {
+  text-align: center;
+  background-color: white;
+  padding: 30px 20px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 800px;
+  font-family: 'DM Mono', monospace;
+}
+
+.space-fact h2 {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  color: #0032A0;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.space-fact p {
+  font-weight: 400;
+  color: #E4002B;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'DM Mono', monospace;
 }
 
 /* Gallery flex container */
@@ -108,6 +139,13 @@ button:hover {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 /* Three columns on wider screens */
@@ -130,6 +168,20 @@ button:hover {
   font-size: 14px;
 }
 
+/* Title styling with DM Mono font */
+.gallery-item .image-title {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  color: #0032A0;
+}
+
+/* Date styling with DM Mono font */
+.gallery-item .image-date {
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  color: #E4002B;
+}
+
 /* Placeholder content */
 .placeholder {
   flex: 1 1 100%;
@@ -141,4 +193,119 @@ button:hover {
 .placeholder-icon {
   font-size: 48px;
   margin-bottom: 20px;
+}
+
+/* Loading state */
+.loading {
+  flex: 1 1 100%;
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.loading p {
+  font-family: 'DM Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.loading-icon {
+  font-size: 36px;
+  margin-bottom: 20px;
+  animation: spin 2s linear infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-icon img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  transform-origin: center center;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  margin: 5% auto;
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
+  border-radius: 8px;
+  max-height: 90%;
+  overflow-y: auto;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #666;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #000;
+}
+
+#modalImage {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.modal-info h3 {
+  color: #212121;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.modal-info p {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+}
+
+/* Modal title with DM Mono font */
+#modalTitle {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  color: #0032A0;
+}
+
+/* Modal date with DM Mono font */
+#modalDate {
+  font-family: 'DM Mono', monospace;
+  font-weight: 400;
+  color: #E4002B;
+}
+
+#modalExplanation {
+  text-align: justify;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
 }
